@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Shorty" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ye6-3O-s2A">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WPy-wC-1C7">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <subviews>
+                                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c2D-km-Bsc">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                                <items>
+                                                    <navigationItem id="hYO-ph-vCm">
+                                                        <nil key="title"/>
+                                                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://" borderStyle="roundedRect" placeholder="http://" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="Mhw-qA-GvC">
+                                                            <rect key="frame" x="20" y="7" width="525" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL" returnKeyType="go"/>
+                                                            <connections>
+                                                                <action selector="loadLocation:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="bUC-it-R5y"/>
+                                                            </connections>
+                                                        </textField>
+                                                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="refresh" id="qeF-RF-kE4">
+                                                            <connections>
+                                                                <action selector="loadLocation:" destination="BYZ-38-t0r" id="9m6-a8-H3s"/>
+                                                            </connections>
+                                                        </barButtonItem>
+                                                    </navigationItem>
+                                                </items>
+                                            </navigationBar>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vg3-Ax-Gdp">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem enabled="NO" systemItem="play" id="TCg-1F-c37"/>
+                                    <barButtonItem title="Shorten Link" style="plain" id="mx3-ct-fdG">
+                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="shortenURL:" destination="BYZ-38-t0r" id="Mli-i3-R6O"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem enabled="NO" title="Copy" id="XAj-Qi-WSA"/>
+                                </items>
+                            </toolbar>
+                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mLu-Qq-LSK">
+                                <rect key="frame" x="0.0" y="46" width="600" height="510"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="554" id="CvU-fd-JRe"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="yYk-A3-9p1"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mLu-Qq-LSK" firstAttribute="leading" secondItem="Vg3-Ax-Gdp" secondAttribute="leading" id="4zD-Ph-x2R"/>
+                            <constraint firstItem="mLu-Qq-LSK" firstAttribute="bottom" secondItem="Vg3-Ax-Gdp" secondAttribute="top" id="6vh-an-982"/>
+                            <constraint firstItem="mLu-Qq-LSK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Rmz-Ri-1Mo"/>
+                            <constraint firstItem="mLu-Qq-LSK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="46" id="aLE-OI-VoO"/>
+                            <constraint firstAttribute="trailing" secondItem="mLu-Qq-LSK" secondAttribute="trailing" id="bqe-h6-TOw"/>
+                            <constraint firstItem="mLu-Qq-LSK" firstAttribute="trailing" secondItem="Ye6-3O-s2A" secondAttribute="trailing" id="hws-4b-szw"/>
+                            <constraint firstItem="mLu-Qq-LSK" firstAttribute="leading" secondItem="Ye6-3O-s2A" secondAttribute="leading" id="rSO-zz-zIG"/>
+                            <constraint firstItem="mLu-Qq-LSK" firstAttribute="top" secondItem="Ye6-3O-s2A" secondAttribute="bottom" constant="2" id="rrb-td-8Pz"/>
+                            <constraint firstItem="mLu-Qq-LSK" firstAttribute="trailing" secondItem="Vg3-Ax-Gdp" secondAttribute="trailing" id="tlr-YW-fpZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="clipboardButton" destination="XAj-Qi-WSA" id="gSp-To-Mqh"/>
+                        <outlet property="shortLabel" destination="mx3-ct-fdG" id="POM-oa-sIN"/>
+                        <outlet property="shortenButton" destination="TCg-1F-c37" id="swV-Op-GIp"/>
+                        <outlet property="urlField" destination="Mhw-qA-GvC" id="wcM-BB-JnT"/>
+                        <outlet property="webView" destination="mLu-Qq-LSK" id="hTz-W4-fgs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="362" y="393"/>
+        </scene>
+    </scenes>
+</document>
